@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Aux from "../../hoc/Aux";
 
-class BurgerBuilder extends Component {
+class IceCreamBuilder extends Component {
   render() {
     return (
       <Aux>
@@ -12,4 +12,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder;
+export default IceCreamBuilder;
