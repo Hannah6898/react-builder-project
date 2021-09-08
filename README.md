@@ -1,4 +1,4 @@
-# IceCream Builder React Project
+# Ice Cream Builder React Project
 
 Heading
 
