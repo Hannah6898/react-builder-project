@@ -22,7 +22,7 @@ Heading
 
 ## Lessons Learnt
 
-• How to implement CSS modules
+• How to implement CSS modules\
 • Using higher order components to wrap components
 
 ## Future Work
