@@ -1,4 +1,4 @@
-# Ice Cream Builder React Project
+# Sandwich Builder React Project
 
 Heading
 
@@ -24,5 +24,6 @@ Heading
 
 • How to implement CSS modules\
 • Using higher order components to wrap components
+• Using prop types to define the type of props accepted by a component
 
 ## Future Work

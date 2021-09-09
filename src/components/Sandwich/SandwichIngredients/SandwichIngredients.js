@@ -9,22 +9,22 @@ const SandwichIngredients = (props) => {
     /*if there is a match between props.type and any of the cases below then
     the associated block of code is executed. If there is no match the default 
     code block is executed*/
-    case "BreadBottom":
+    case "breadBottom":
       scoop = <div className={classes.BreadBottom}></div>;
       break;
-    case "BreadTop":
+    case "breadTop":
       scoop = <div className={classes.BreadTop}></div>;
       break;
-    case "Chicken":
+    case "chicken":
       scoop = <div className={classes.Chicken}></div>;
       break;
-    case "Cheese":
+    case "cheese":
       scoop = <div className={classes.Cheese}></div>;
       break;
-    case "Salad":
+    case "salad":
       scoop = <div className={classes.Salad}></div>;
       break;
-    case "Bacon":
+    case "bacon":
       scoop = <div className={classes.Bacon}></div>;
       break;
     default:
