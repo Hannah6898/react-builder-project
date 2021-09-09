@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import Aux from "../../hoc/Aux";
+import Sandwich from "../../components/Sandwich/Sandwich";
 
-class IceCreamBuilder extends Component {
+class SandwichBuilder extends Component {
   render() {
     return (
       <Aux>
-        <div>Burger Image</div>
+        <Sandwich />
         <div>Control element</div>
       </Aux>
     );
   }
 }
 
-export default IceCreamBuilder;
+export default SandwichBuilder;
