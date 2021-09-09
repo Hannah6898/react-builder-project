@@ -1,5 +1,5 @@
 import React from "react";
-import Aux from "../../hoc/Aux";
+import PropTypes from "prop-types";
 import classes from "./IceCreamScoops.module.css";
 
 const IceCreamScoops = (props) => {
@@ -28,5 +28,11 @@ const IceCreamScoops = (props) => {
   }
   return scoop;
 };
+
+IceCreamScoops.propTypes = {
+  type: PropTypes.string.isRequired,
+};
+//Prop.types = provides informatin on what type of prop to expect
+//isRequired = If this component is used without passing a type, we get an error
 
 export default IceCreamScoops;
