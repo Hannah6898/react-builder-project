@@ -31,7 +31,18 @@ class SandwichBuilder extends Component {
     };
     updatedIngredients[type] = updatedCount;
     //Accessing the ingredients in the new object created and setting the value to the updated count
+
     const newPrice = this.state.totalPrice + INGREDIENT_PRICES[type];
+    this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
+  };
+
+  removeIngredientHandler = (type) => {
+    const updatedCount = this.state.ingredients[type] - 1;
+    const updatedIngredients = {
+      ...this.state.ingredients,
+    };
+    updatedIngredients[type] = updatedCount;
+    const newPrice = this.state.totalPrice - INGREDIENT_PRICES[type];
     this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
   };
 
@@ -39,7 +50,10 @@ class SandwichBuilder extends Component {
     return (
       <Aux>
         <Sandwich ingredients={this.state.ingredients} />
-        <BuildControls ingredientAdded={this.addIngredientHandler} />
+        <BuildControls
+          ingredientAdded={this.addIngredientHandler}
+          ingredientRemoved={this.removeIngredientHandler}
+        />
       </Aux>
     );
   }

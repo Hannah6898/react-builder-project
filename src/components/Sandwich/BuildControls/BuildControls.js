@@ -18,6 +18,7 @@ const BuildControls = (props) => {
           ingredientLabel={control.label}
           added={() => props.ingredientAdded(control.type)}
           //Pass the control type to keep track of which type this build control is
+          remove={() => props.ingredientRemoved(control.type)}
         />
       ))}
     </div>
