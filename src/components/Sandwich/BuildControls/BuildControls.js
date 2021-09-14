@@ -19,6 +19,7 @@ const BuildControls = (props) => {
           added={() => props.ingredientAdded(control.type)}
           //Pass the control type to keep track of which type this build control is
           remove={() => props.ingredientRemoved(control.type)}
+          disabled={() => props.disabled[control.type]}
         />
       ))}
     </div>

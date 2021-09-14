@@ -37,7 +37,11 @@ class SandwichBuilder extends Component {
   };
 
   removeIngredientHandler = (type) => {
-    const updatedCount = this.state.ingredients[type] - 1;
+    const oldCount = this.state.ingredients[type];
+    if (oldCount <= 0) {
+      return;
+    }
+    const updatedCount = oldCount - 1;
     const updatedIngredients = {
       ...this.state.ingredients,
     };
@@ -47,12 +51,20 @@ class SandwichBuilder extends Component {
   };
 
   render() {
+    const disableInfo = {
+      ...this.state.ingredients,
+    };
+    for (let key in disableInfo) {
+      disableInfo[key] = disableInfo[key] <= 0;
+    }
+    console.log(disableInfo);
     return (
       <Aux>
         <Sandwich ingredients={this.state.ingredients} />
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
+          disableInfo={disableInfo}
         />
       </Aux>
     );
