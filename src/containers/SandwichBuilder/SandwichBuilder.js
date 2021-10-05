@@ -23,6 +23,7 @@ class SandwichBuilder extends Component {
     },
     totalPrice: 2,
     purchaseable: false,
+    purchasing: false,
   };
 
   //check whether we can turn purchaseable to true or false
@@ -76,6 +77,10 @@ class SandwichBuilder extends Component {
     this.updatePurchaseState(updatedIngredients);
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
   render() {
     const disableInfo = {
       ...this.state.ingredients,
@@ -83,9 +88,10 @@ class SandwichBuilder extends Component {
     for (let key in disableInfo) {
       disableInfo[key] = disableInfo[key] <= 0;
     }
+
     return (
       <Aux>
-        <Modal>
+        <Modal show={this.state.purchasing}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Sandwich ingredients={this.state.ingredients} />
@@ -95,6 +101,7 @@ class SandwichBuilder extends Component {
           disableInfo={disableInfo}
           price={this.state.totalPrice}
           purchaseable={this.state.purchaseable}
+          clicked={this.purchaseHandler}
         />
       </Aux>
     );
