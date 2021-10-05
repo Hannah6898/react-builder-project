@@ -3,8 +3,6 @@ import classes from "./Sandwich.module.css";
 import SandwichIngredients from "./SandwichIngredients/SandwichIngredients";
 
 const Sandwich = (props) => {
-  console.log(props.ingredients);
-  debugger;
   let transformedIngredients = Object.keys(props.ingredients)
     .map(
       /*Object (a default JS object) is used. Object has a method called keys
@@ -37,7 +35,6 @@ const Sandwich = (props) => {
   if (transformedIngredients.length === 0) {
     transformedIngredients = <p>Please start adding ingredients!</p>;
   }
-  console.log(transformedIngredients);
   return (
     <div className={classes.Sandwich}>
       <SandwichIngredients type="breadTop" />

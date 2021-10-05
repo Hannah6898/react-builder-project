@@ -11,17 +11,25 @@ const controls = [
 
 const BuildControls = (props) => {
   return (
-    <div className={classes.BuildControls}>
-      {controls.map((control) => (
-        <BuildControl
-          key={control.label}
-          ingredientLabel={control.label}
-          added={() => props.ingredientAdded(control.type)}
-          //Pass the control type to keep track of which type this build control is
-          remove={() => props.ingredientRemoved(control.type)}
-          disabled={() => props.disabled[control.type]}
-        />
-      ))}
+    <div>
+      <div className={classes.BuildControls}>
+        <p>
+          Current Price: <strong>£{props.price.toFixed(2)}</strong>
+        </p>
+        {controls.map((control) => (
+          <BuildControl
+            key={control.label}
+            ingredientLabel={control.label}
+            added={() => props.ingredientAdded(control.type)}
+            //Pass the control type to keep track of which type this build control is
+            remove={() => props.ingredientRemoved(control.type)}
+            disabled={props.disableInfo[control.type]}
+          />
+        ))}
+        <button className={classes.OrderButton} disabled={!props.purchaseable}>
+          ORDER NOW
+        </button>
+      </div>
     </div>
   );
 };
