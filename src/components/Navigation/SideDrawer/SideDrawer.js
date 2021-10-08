@@ -4,6 +4,7 @@ import NavigationItems from "../NavigationItems/NavigationItems";
 import classes from "./SideDrawer.module.css";
 import Aux from "../../../hoc/Aux";
 import Backdrop from "../../UI/Backdrop/Backdrop";
+import PropTypes from "prop-types";
 
 const SideDrawer = (props) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -12,7 +13,9 @@ const SideDrawer = (props) => {
   }
   return (
     <Aux>
-      <Backdrop show={props.openDrawer} clicked={props.closed} />
+      <div className={classes.Backdrop}>
+        <Backdrop show={props.openDrawer} clicked={props.closed} />
+      </div>
       <div className={attachedClasses.join(" ")}>
         <div className={classes.Logo}>
           <Logo />
@@ -25,4 +28,8 @@ const SideDrawer = (props) => {
   );
 };
 
+SideDrawer.propTypes = {
+  openDrawer: PropTypes.bool.isRequired,
+  closed: PropTypes.func.isRequired,
+};
 export default SideDrawer;
